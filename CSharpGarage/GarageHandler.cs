@@ -5,23 +5,24 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace CSharpGarage
 {
-    internal class GarageHandler : IHandler
+    public class GarageHandler : IHandler
     {
         private Garage<IVehicle> thisGarage;
 
         private IEnumerable<IVehicle> query;
         public void InitGarage()
         {
-            thisGarage.Add(new Boat("ABC123", "Red", 3, 27));
-            thisGarage.Add(new Car("DEF456", "White", 4, 1.64));
-            thisGarage.Add(new Bus("GHI789", "Black", 6, 24));
-            thisGarage.Add(new Car("JKL101", "Blue", 4, 19));
-            thisGarage.Add(new Motorcycle("MNO112", "Blue", 2, "Diesel"));
-            thisGarage.Add(new Truck("GHT", "Yellow", 4, 4));
+            thisGarage.Add(new Boat("ABC123", "Red", 3, "Brunswick", 27));
+            thisGarage.Add(new Car("DEF456", "White", 4, "Toyota", 1.64));
+            thisGarage.Add(new Bus("GHI789", "Black", 6, "Collins", 24));
+            thisGarage.Add(new Car("JKL101", "Blue", 4, "Ford", 19));
+            thisGarage.Add(new Motorcycle("MNO112", "Blue", 2, "Honda", "Diesel"));
+            thisGarage.Add(new Truck("GHT", "Yellow", 4, "Ram", 4));
         }
 
         //Kan kanske förbättra/skriva ihop med något annat
@@ -53,6 +54,20 @@ namespace CSharpGarage
             }
             return null;
         }
+
+        public IVehicle? GetFromName(string name)
+        {
+            // return thisGarage.FirstOrDefault(v => v.Name.ToLower() == name.ToLower());
+            foreach (var vehicle in thisGarage)
+            {
+                if (vehicle.Name.ToLower() == name.ToLower())
+                {
+                    return vehicle;
+                }
+            }
+            return null;
+        }
+
 
         public void AddVehicle(IVehicle vehicle)
         {
@@ -138,5 +153,7 @@ namespace CSharpGarage
             return query.ToList();
         }
 
+
     }
 }
+

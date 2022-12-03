@@ -5,6 +5,10 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpGarage", "CSharpGarage\CSharpGarage.csproj", "{CEB8F40E-2125-4AD9-B0C7-07857B6BDFCA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2B7D78D0-9405-44B8-8B77-E530A645A958}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpGarageTest", "CSharpGarageTest\CSharpGarageTest.csproj", "{33462C31-C4BA-454E-A33D-51DA2B517644}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{CEB8F40E-2125-4AD9-B0C7-07857B6BDFCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEB8F40E-2125-4AD9-B0C7-07857B6BDFCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEB8F40E-2125-4AD9-B0C7-07857B6BDFCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33462C31-C4BA-454E-A33D-51DA2B517644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33462C31-C4BA-454E-A33D-51DA2B517644}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33462C31-C4BA-454E-A33D-51DA2B517644}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33462C31-C4BA-454E-A33D-51DA2B517644}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{33462C31-C4BA-454E-A33D-51DA2B517644} = {2B7D78D0-9405-44B8-8B77-E530A645A958}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ABDA1C0A-10FC-4637-8361-91F4DB93F2AE}

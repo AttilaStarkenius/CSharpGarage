@@ -15,7 +15,7 @@ namespace CSharpGarage
             return base.Stats() + $", Cylinder Volym: {CylinderVolume}";
         }
 
-        public Car(string RegNr, string Color, int Wheels, double cylinder) : base(RegNr, Color, Wheels)
+        public Car(string RegNr, string Color, int Wheels, string Name, double cylinder) : base(RegNr, Color, Wheels, Name)
         {
             CylinderVolume = cylinder;
 
@@ -29,7 +29,7 @@ namespace CSharpGarage
         {
             return base.Stats() + $", Number of Engines: {NrOfEngines}";
         }
-        public Airplane(string RegNr, string Color, int Wheels, int engines) : base(RegNr, Color, Wheels)
+        public Airplane(string RegNr, string Color, int Wheels, string Name, int engines) : base(RegNr, Color, Wheels, Name)
         {
             NrOfEngines = engines;
         }
@@ -42,7 +42,7 @@ namespace CSharpGarage
         {
             return base.Stats() + $", Fuel: {FuelType}";
         }
-        public Motorcycle(string RegNr, string Color, int Wheels, string fuel) : base(RegNr, Color, Wheels)
+        public Motorcycle(string RegNr, string Color, int Wheels, string Name, string fuel) : base(RegNr, Color, Wheels, Name)
         {
             FuelType = fuel;
         }
@@ -55,7 +55,7 @@ namespace CSharpGarage
         {
             return base.Stats() + $", Seats: {NrOfSeats}";
         }
-        public Bus(string RegNr, string Color, int Wheels, int seats) : base(RegNr, Color, Wheels)
+        public Bus(string RegNr, string Color, int Wheels, string Name, int seats) : base(RegNr, Color, Wheels, Name)
         {
             NrOfSeats = seats;
         }
@@ -67,7 +67,7 @@ namespace CSharpGarage
         {
             return base.Stats() + $", Length: {length}";
         }
-        public Boat(string RegNr, string Color, int Wheels, int length) : base(RegNr, Color, Wheels)
+        public Boat(string RegNr, string Color, int Wheels, string Name, int length) : base(RegNr, Color, Wheels, Name)
         {
             this.length = length;
         }

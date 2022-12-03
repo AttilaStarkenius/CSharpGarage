@@ -14,7 +14,7 @@ namespace CSharpGarage
             return base.Stats() + $", Height: {Height}";
         }
 
-        public Truck(string RegNr, string Color, int Wheels, int height) : base(RegNr, Color, Wheels)
+        public Truck(string RegNr, string Color, int Wheels, string Name, int height) : base(RegNr, Color, Wheels, Name)
         {
             Height = height;
 

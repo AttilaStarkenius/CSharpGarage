@@ -23,11 +23,12 @@ namespace CSharpGarage
             return $"Type: {this.GetType().Name}, RegNr: {RegNr}, Wheels: {Wheels}, Color: {Color}, Name: {Name}";
         }
 
-        public Vehicle(string RegNr, string Color, int Wheels)
+        public Vehicle(string RegNr, string Color, int Wheels, string Name)
         {
             this.RegNr = RegNr;
             this.Color = Color;
             this.Wheels = Wheels;
+            this.Name = Name;
         }
     }
 }

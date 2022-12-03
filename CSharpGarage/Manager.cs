@@ -108,7 +108,7 @@ internal class Manager
         if (ui.GetKey() == ConsoleKey.Y)
         {
             string type = ui.GetVehicleType();
-            currGarage.Filter("type", type, 0);
+            currGarage.Filter("type", "", type, 0);
             options = options + " av typen " + type;
         }
 
@@ -156,7 +156,7 @@ internal class Manager
 
     private void PrintTypes(IHandler currGarage, IUI ui)
     {
-        List<string> types = new List<string> { "Car", "Boat", "Bus", "Motorcycle", "Airplane" };
+        List<string> types = new List<string> { "Car", "Boat", "Bus", "Motorcycle", "Airplane", "Truck" };
 
         foreach (string type in types)
         {
@@ -200,35 +200,45 @@ internal class Manager
         ui.Output("Skriv in antalet hjul på fordonet");
         wheels = ui.GetNumber();
 
+        string name;
+        ui.Output("Skriv in namnet på fordonet");
+        name = ui.GetInput();
+
         if (type == "Car")
         {
             ui.Output("Välj cylinder storlek för bilen.");
             var cylinder = ui.GetNumber();
-            handler.AddVehicle(new Car(regNr, color, wheels, cylinder));
+            handler.AddVehicle(new Car(regNr, color, wheels, name, cylinder));
         }
         else if (type == "Airplane")
         {
             ui.Output("Välj antalet motorer för planet.");
             var engines = ui.GetNumber();
-            handler.AddVehicle(new Airplane(regNr, color, wheels, engines));
+            handler.AddVehicle(new Airplane(regNr, color, wheels, name, engines));
         }
         else if (type == "Motorcycle")
         {
             ui.Output("Välj bränsletyp för motorcykeln.");
             var fuel = ui.GetInput();
-            handler.AddVehicle(new Motorcycle(regNr, color, wheels, fuel));
+            handler.AddVehicle(new Motorcycle(regNr, color, wheels, name, fuel));
         }
         else if (type == "Bus")
         {
             ui.Output("Välj antalet platser på bussen.");
             var seats = ui.GetNumber();
-            handler.AddVehicle(new Bus(regNr, color, wheels, seats));
+            handler.AddVehicle(new Bus(regNr, color, wheels, name, seats));
         }
         else if (type == "Boat")
         {
             ui.Output("Välj längden på båten.");
             var length = ui.GetNumber();
-            handler.AddVehicle(new Boat(regNr, color, wheels, length));
+            handler.AddVehicle(new Boat(regNr, color, wheels, name, length));
+        }
+        else if (type == "Truck")
+        {
+            ui.Output("Välj höjden på lastbilen.");
+            var height = ui.GetNumber();
+            handler.AddVehicle(new Truck(regNr, color, wheels, name, height));
         }
 
         ui.Output("Lade till fordonet:");
